@@ -13,10 +13,10 @@ provider "ibmcloud" {
 }
 
 resource "ibmcloud_cf_service_instance" "cloudant" {
-  name              = "cloudant"
+  name              = "testing"
   space_guid        = "dev"
   service           = "cloudantNoSQLDB"
-  plan              = "Shared"
+  plan              = "Lite"
 }
 
 variable bxapikey {
