@@ -12,8 +12,8 @@ provider "ibmcloud" {
   bluemix_api_key = "${var.bxapikey}"
 }
 
-data "ibmcloud_cf_service_instance" "twilio" {
-  name  = "twilio"
+data "ibmcloud_cf_service_instance" "cloudant" {
+  name  = "cloudant"
 }
 
 variable bxapikey {
@@ -23,6 +23,6 @@ variable bxapikey {
 ##############################################################################
 # Outputs
 ##############################################################################
-output "twilio_key" {
-  value = "${ibmcloud_cf_service_instance.twilio.credentials}"
+output "cloudant_key" {
+  value = "${ibmcloud_cf_service_instance.cloudant.credentials}"
 }
