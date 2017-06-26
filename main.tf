@@ -12,7 +12,7 @@ provider "ibmcloud" {
   bluemix_api_key = "${var.bxapikey}"
 }
 
-data "ibmcloud_cf_service_instance" "cloudant" {
+data "ibmcloud_cf_service_instance" "cloudantNoSQLDB" {
   name  = "cloudant"
 }
 
