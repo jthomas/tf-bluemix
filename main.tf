@@ -25,5 +25,5 @@ variable bxapikey {
 # Outputs
 ##############################################################################
 output "twilio_key" {
-  value = "${ibmcloud_cf_service_key.serviceKeydata.twilio}"
+  value = "${ibmcloud_cf_service_key.serviceKeydata.twilio.credentials}"
 }
