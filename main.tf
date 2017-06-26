@@ -12,9 +12,14 @@ provider "ibmcloud" {
   bluemix_api_key = "${var.bxapikey}"
 }
 
+data "ibmcloud_cf_space" "spacedata" {
+  space  = "${var.bluemix_space}"
+  org    = "${var.bluemix_org}"
+}
+
 resource "ibmcloud_cf_service_instance" "cloudant" {
   name              = "testing"
-  space_guid        = "dev"
+  space_guid        = "${data.ibmcloud_cf_space.spacedata.id}"
   service           = "cloudantNoSQLDB"
   plan              = "Lite"
 }
