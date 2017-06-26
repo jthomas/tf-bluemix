@@ -28,6 +28,14 @@ variable bxapikey {
   description = "Your Bluemix API Key."
 }
 
+variable "bluemix_org" {
+  description = "Your Bluemix Organisation."
+}
+
+variable "bluemix_space" {
+  description = "Your Bluemix Space."
+}
+
 ##############################################################################
 # Outputs
 ##############################################################################
