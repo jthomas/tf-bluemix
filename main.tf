@@ -24,6 +24,11 @@ resource "ibmcloud_cf_service_instance" "cloudant" {
   plan              = "Lite"
 }
 
+resource "ibmcloud_cf_service_key" "cloudantKey" {
+    name = "mycloudantkey"
+    service_instance_guid = "${ibmcloud_cf_service_instance.cloudant.id}"
+}
+
 variable bxapikey {
   description = "Your Bluemix API Key."
 }
@@ -40,5 +45,5 @@ variable "bluemix_space" {
 # Outputs
 ##############################################################################
 output "cloudant_key" {
-  value = "${ibmcloud_cf_service_instance.cloudant.credentials}"
+  value = "${ibmcloud_cf_service_key.cloudantKey.credentials}"
 }
